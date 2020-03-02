@@ -64,15 +64,6 @@ public class Vista extends javax.swing.JFrame {
         btnNew = new javax.swing.JButton();
         btnLanguage = new javax.swing.JButton();
         btnLex = new javax.swing.JButton();
-        menu = new javax.swing.JMenuBar();
-        MFile = new javax.swing.JMenu();
-        MINew = new javax.swing.JMenuItem();
-        MIOpen = new javax.swing.JMenuItem();
-        MISave = new javax.swing.JMenuItem();
-        subLenguaje = new javax.swing.JMenu();
-        OptionIngles = new javax.swing.JRadioButtonMenuItem();
-        OptionEspañol = new javax.swing.JRadioButtonMenuItem();
-        MHelp = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -139,82 +130,6 @@ public class Vista extends javax.swing.JFrame {
             }
         });
 
-        menu.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-
-        MFile.setText("File");
-        MFile.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        MFile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MFileActionPerformed(evt);
-            }
-        });
-
-        MINew.setText("New");
-        MINew.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MINewActionPerformed(evt);
-            }
-        });
-        MFile.add(MINew);
-
-        MIOpen.setText("Open");
-        MIOpen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MIOpenActionPerformed(evt);
-            }
-        });
-        MFile.add(MIOpen);
-
-        MISave.setText("Save");
-        MISave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MISaveActionPerformed(evt);
-            }
-        });
-        MFile.add(MISave);
-
-        menu.add(MFile);
-
-        subLenguaje.setText("Language");
-        subLenguaje.setInheritsPopupMenu(true);
-
-        buttonGroup1.add(OptionIngles);
-        OptionIngles.setSelected(true);
-        OptionIngles.setText("Inglish");
-        OptionIngles.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OptionInglesActionPerformed(evt);
-            }
-        });
-        subLenguaje.add(OptionIngles);
-
-        buttonGroup1.add(OptionEspañol);
-        OptionEspañol.setText("Spanish");
-        OptionEspañol.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OptionEspañolActionPerformed(evt);
-            }
-        });
-        subLenguaje.add(OptionEspañol);
-
-        menu.add(subLenguaje);
-
-        MHelp.setText("Analyze");
-        MHelp.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        MHelp.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MHelpMouseClicked(evt);
-            }
-        });
-        MHelp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MHelpActionPerformed(evt);
-            }
-        });
-        menu.add(MHelp);
-
-        setJMenuBar(menu);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -246,55 +161,12 @@ public class Vista extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MINewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MINewActionPerformed
-       nuevo();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MINewActionPerformed
-
-    private void MFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MFileActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MFileActionPerformed
-
-    private void MIOpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MIOpenActionPerformed
-              open();
-    }//GEN-LAST:event_MIOpenActionPerformed
-
-    private void MISaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MISaveActionPerformed
-   save();
-// TODO add your handling code here:
-    }//GEN-LAST:event_MISaveActionPerformed
-
     private void txtEditorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEditorKeyPressed
         //Analizador anali =new Analizador();
         //anali.analizar(txtEditor.getText());
         
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEditorKeyPressed
-
-    private void OptionEspañolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OptionEspañolActionPerformed
-        español();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_OptionEspañolActionPerformed
-
-    private void OptionInglesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OptionInglesActionPerformed
-        ingles();
-    }//GEN-LAST:event_OptionInglesActionPerformed
-
-    private void MHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MHelpActionPerformed
-     
-        Lexemas  lexema = new Lexemas();
-        lexema.cargar(txtEditor.getText());
-        lexema.imprimir();
-        lexema.setVisible(true);
-
-    }//GEN-LAST:event_MHelpActionPerformed
-
-    private void MHelpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MHelpMouseClicked
-        Lexemas  lexema = new Lexemas();
-        lexema.cargar(txtEditor.getText());
-        lexema.imprimir();
-        lexema.setVisible(true);
-    }//GEN-LAST:event_MHelpMouseClicked
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
         nuevo();
@@ -317,13 +189,6 @@ public class Vista extends javax.swing.JFrame {
 };
     private void ingles(){
      
-    };
-    private void español(){
-        this.MFile.setText("Archivo");
-        this.MHelp.setText("Analizar");
-        this.MINew.setText("Nuevo");
-        this.MIOpen.setText("Abrir");
-        this.MISave.setText("Guardar");
     };
     private void open(){
       JFileChooser ruta = new JFileChooser();
@@ -394,13 +259,6 @@ public class Vista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu MFile;
-    private javax.swing.JMenu MHelp;
-    private javax.swing.JMenuItem MINew;
-    private javax.swing.JMenuItem MIOpen;
-    private javax.swing.JMenuItem MISave;
-    private javax.swing.JRadioButtonMenuItem OptionEspañol;
-    private javax.swing.JRadioButtonMenuItem OptionIngles;
     private javax.swing.JButton btnLanguage;
     private javax.swing.JButton btnLex;
     private javax.swing.JButton btnNew;
@@ -418,8 +276,6 @@ public class Vista extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JMenuBar menu;
-    private javax.swing.JMenu subLenguaje;
     private javax.swing.JTextArea txtEditor;
     // End of variables declaration//GEN-END:variables
 }
